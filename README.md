@@ -47,3 +47,26 @@ This project analyzes customer distribution, credit scores, and age groups to de
 - Inactive customers show consistently higher exit rates
 - Largest retention gap in low credit score range (350-499)
 - Age group 50-59 shows highest exit tendency
+
+## 🤖 Model Performance
+### Training Configuration
+```python
+history = model.fit(
+    X_train, 
+    y_train,
+    validation_data=(X_test, y_test),
+    epochs=100,
+    callbacks=[tensorflow_callback, early_stopping_callback]
+)
+```
+
+### Performance Metrics
+| Metric | Score |
+|--------|--------|
+| Accuracy | 0.7516 |
+| Precision | 0.6648 |
+| Recall | 0.5777 |
+| F1 Score | 0.6182 |
+| ROC Score | 0.8583 |
+
+> **Note**: Model predictions use probability threshold adjustment >0.35 for binary classification
